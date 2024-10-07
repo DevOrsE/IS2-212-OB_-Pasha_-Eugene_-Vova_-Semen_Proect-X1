@@ -1,0 +1,13 @@
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\bin\Debug\TaskManagerProject.exe
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\bin\Debug\TaskManagerProject.exe.config
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\obj\Debug\TaskManagerProject.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\obj\Debug\TaskManagerProject.Login_Registration.LoginRegistration.resources
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\obj\Debug\TaskManagerProject.Login_Registration.RegistrationAndLogin.Login.resources
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\obj\Debug\TaskManagerProject.Login_Registration.RegistrationAndLogin.Registration.resources
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\obj\Debug\TaskManagerProject.MainScreen.MainForm.resources
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\obj\Debug\TaskManagerProject.Properties.Resources.resources
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\obj\Debug\TaskManagerProject.csproj.GenerateResource.cache
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\obj\Debug\TaskManagerProject.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\obj\Debug\TaskManagerProject.exe
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\obj\Debug\TaskManagerProject.pdb
+C:\Users\user\source\repos\TaskManagerProject\TaskManagerProject\bin\Debug\TaskManagerProject.pdb
