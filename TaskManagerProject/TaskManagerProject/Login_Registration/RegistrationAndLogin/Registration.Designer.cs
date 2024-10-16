@@ -41,13 +41,15 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Minecraft Rus", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(302, 304);
+            this.label2.Location = new System.Drawing.Point(304, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 42);
             this.label2.TabIndex = 12;
@@ -58,7 +60,7 @@
             // 
             this.ФИО.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ФИО.Font = new System.Drawing.Font("Minecraft Rus", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ФИО.Location = new System.Drawing.Point(302, 238);
+            this.ФИО.Location = new System.Drawing.Point(304, 204);
             this.ФИО.Name = "ФИО";
             this.ФИО.Size = new System.Drawing.Size(160, 42);
             this.ФИО.TabIndex = 11;
@@ -69,7 +71,7 @@
             // 
             this.Вход.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Вход.Font = new System.Drawing.Font("Minecraft Rus", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Вход.Location = new System.Drawing.Point(383, 53);
+            this.Вход.Location = new System.Drawing.Point(393, 49);
             this.Вход.Name = "Вход";
             this.Вход.Size = new System.Drawing.Size(519, 68);
             this.Вход.TabIndex = 10;
@@ -80,7 +82,8 @@
             // 
             this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox2.Font = new System.Drawing.Font("Minecraft Rus", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(468, 314);
+            this.textBox2.Location = new System.Drawing.Point(470, 280);
+            this.textBox2.MaxLength = 50;
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(366, 22);
@@ -92,7 +95,8 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Minecraft Rus", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(468, 248);
+            this.textBox1.Location = new System.Drawing.Point(470, 214);
+            this.textBox1.MaxLength = 50;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(366, 22);
             this.textBox1.TabIndex = 8;
@@ -102,7 +106,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(468, 545);
+            this.button1.Location = new System.Drawing.Point(470, 556);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(366, 67);
             this.button1.TabIndex = 7;
@@ -114,7 +118,7 @@
             // 
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Minecraft Rus", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(302, 373);
+            this.label1.Location = new System.Drawing.Point(304, 324);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 42);
             this.label1.TabIndex = 14;
@@ -125,7 +129,8 @@
             // 
             this.textBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox3.Font = new System.Drawing.Font("Minecraft Rus", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(468, 383);
+            this.textBox3.Location = new System.Drawing.Point(470, 334);
+            this.textBox3.MaxLength = 50;
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(366, 22);
@@ -137,7 +142,7 @@
             // 
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Minecraft Rus", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(302, 181);
+            this.label3.Location = new System.Drawing.Point(304, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 42);
             this.label3.TabIndex = 16;
@@ -147,7 +152,8 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Minecraft Rus", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(468, 191);
+            this.textBox4.Location = new System.Drawing.Point(470, 157);
+            this.textBox4.MaxLength = 11;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(366, 22);
             this.textBox4.TabIndex = 15;
@@ -160,7 +166,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(468, 445);
+            this.comboBox1.Location = new System.Drawing.Point(470, 451);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(366, 24);
             this.comboBox1.TabIndex = 17;
@@ -169,7 +175,7 @@
             // 
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Minecraft Rus", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(302, 433);
+            this.label4.Location = new System.Drawing.Point(304, 439);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 42);
             this.label4.TabIndex = 18;
@@ -180,18 +186,43 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(706, 481);
+            this.label5.Location = new System.Drawing.Point(708, 487);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(128, 16);
             this.label5.TabIndex = 19;
             this.label5.Text = "Уже есть аккаунт?";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // label6
+            // 
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("Minecraft Rus", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(304, 382);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 42);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Курс:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(470, 394);
+            this.textBox6.MaxLength = 1;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(366, 22);
+            this.textBox6.TabIndex = 22;
+            this.textBox6.Click += new System.EventHandler(this.textBox6_Click);
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
+            this.textBox6.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox6_KeyUp);
+            this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
@@ -205,7 +236,9 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.MaximizeBox = false;
             this.Name = "Registration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Registration_Load);
             this.ResumeLayout(false);
@@ -228,5 +261,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }

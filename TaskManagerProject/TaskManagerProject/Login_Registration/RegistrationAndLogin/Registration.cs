@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagerProject.MainScreen;
+using TaskManagerProject.MetaData;
 using TaskManagerProject.Models;
 using TaskManagerProject.Repository;
 
@@ -21,9 +22,10 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
         List<Group> groups;
         string[] array;
         string phoneNumber;
+        int sumNumbers = 0;
         string password;
         SQLManager sQLManager;
-        List<string> hints = new List<string>() { "79788252134", "Пупкин Василий Владимирович", "*****", "Выберете вашу группу" };
+        List<string> hints = new List<string>() { "79788252134", "Пупкин Василий Владимирович", "*****", "Выберете вашу группу", "1" };
         char[] digits = new char[10] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '1' };
         List<TextBox> textBoxes;
 
@@ -35,7 +37,7 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
 
         private void FillListByTB()
         {
-            textBoxes = new List<TextBox>() { textBox4, textBox1, textBox2, textBox3 };
+            textBoxes = new List<TextBox>() { textBox4, textBox1, textBox2, textBox3, textBox6 };
         }
 
         public async void SetGroups()
@@ -49,7 +51,7 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
 
         public void SetHints()
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 textBoxes[i].Text = hints[i];
                 textBoxes[i].ForeColor = Color.Gray;
@@ -75,18 +77,13 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
 
         private void Registration_Load(object sender, EventArgs e)
         {
-
+            base.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            for (int i = 0; i < digits.Length; i++)
-            {
-                if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-            }
+        {   
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                e.Handled = true;
         }
 
         private void textBox4_KeyUp(object sender, KeyEventArgs e)
@@ -180,7 +177,7 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
 
         private bool setPhoneNumber(TextBox textBox)
         {
-            if (textBox.Text.Length == 11 && textBox.ForeColor != Color.Gray)
+            if (textBox.Text.Length == 11 && textBox.ForeColor != Color.Gray && textBox4.Text[0] == '7')
             {
                 phoneNumber = textBox.Text;
                 return true;
@@ -274,6 +271,8 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
 
             SetUpPassword(textBox2);
 
+            if(textBox6.Text == null) { message = "Все поля должны быть заполнены"; return false; }
+
             isOk = setStudentGroup(comboBox);
             if (!isOk)
             {
@@ -307,9 +306,10 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
                 bool isExist = await sQLManager.CheckUserIfExist(array[1], array[0], array[2], password);
                 if (!isExist)
                 {
-                    bool result = await sQLManager.RegisterUser(array[1], array[0], array[2], password, phoneNumber, comboBox1.Text,isExist);
+                    bool result = await sQLManager.RegisterUser(array[1], array[0], array[2], password, phoneNumber, comboBox1.Text, isExist,Convert.ToInt32(textBox6.Text));
                     if (result)
                     {
+                        JsonManager json = new JsonManager(new Student(0, array[0], array[1], array[2], "Student", "#$%^&", comboBox1.Text, phoneNumber, Convert.ToInt32(textBox6.Text)));
                         MainForm mainForm = new MainForm();
                         mainForm.Show();
                         base.Visible = false;
@@ -329,7 +329,6 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             Register();
         }
 
@@ -338,6 +337,36 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
             Login login = new Login();
             login.Show();
             base.Visible = false;
+        }
+
+        private void textBox6_Click(object sender, EventArgs e)
+        {
+            if (textBox6.Text == hints[4] && textBox4.ForeColor == Color.Gray)
+            {
+                textBox6.Clear();
+                textBox6.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox6_Leave(object sender, EventArgs e)
+        {
+            if (textBox6.Text == "")
+            {
+                textBox6.Text = hints[4];
+                textBox6.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox t = (TextBox)sender;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void textBox6_KeyUp(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
