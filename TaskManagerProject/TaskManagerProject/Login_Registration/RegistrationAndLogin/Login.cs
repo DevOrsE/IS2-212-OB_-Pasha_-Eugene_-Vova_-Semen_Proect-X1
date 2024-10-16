@@ -4,11 +4,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskManagerProject.MainScreen;
+using TaskManagerProject.MetaData;
+using TaskManagerProject.Models;
 using TaskManagerProject.Repository;
 
 namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
@@ -16,7 +20,7 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
     public partial class Login : Form
     {
 
-
+        JsonManager jsonManager;
         string password = "";
         string[] array;
         private void SetUp()
@@ -31,7 +35,7 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            base.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private bool SetUpName(TextBox Name) {
@@ -42,13 +46,11 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
             for(int i  = 0; i < name.Length; i++) {
                 if (name[i] != ' ') {
                     array[count] = array[count] + name[i];
-                    Debug.WriteLine(name[i].ToString());
                 }
                 else
                 {
                     count++;
                     if (count == 3) return false;
-                    Debug.WriteLine(count.ToString());
                     continue;                
                 }
             }
@@ -70,14 +72,19 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
             password = passwordTBox.Text.ToString().Trim();
         }
 
-        void EnterSystem(bool isExist)
+        private async void EnterSystem(bool isExist, string f, string l, string t)
         {
             if (isExist)
             {
+                SQLManager sqlManager = new SQLManager();
+                Student student = await sqlManager.GetStudent(f, l, t);
+                await JsonManager.CreateJson(student);
+
                 MainForm mainForm = new MainForm();
+                
                 mainForm.Show();
                 Login login = new Login();
-                login.Visible = false;
+                base.Visible = false;
             }
             else
             {
@@ -89,7 +96,7 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
         {
             SQLManager sqlManager = new SQLManager();
             bool isExist = await sqlManager.CheckUserIfExist(firstName, lastName, thirdName, password);
-            EnterSystem(isExist);
+            EnterSystem(isExist, firstName, lastName, thirdName);
         }
 
         private void CheckIfEmpyField(out bool isField)
@@ -150,6 +157,13 @@ namespace TaskManagerProject.Login_Registration.RegistrationAndLogin
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            
+            SecretForm secretForm = new SecretForm();
+            secretForm.Show();
         }
     }
 }
