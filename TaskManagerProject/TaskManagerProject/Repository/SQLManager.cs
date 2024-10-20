@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
@@ -37,11 +38,17 @@ namespace TaskManagerProject.Repository
             string sqlException = $"UPDATE StudentNew SET isStarosta = {1} WHERE ID = @ID ";
             SqlCommand sqlCommand = new SqlCommand(sqlException, connection);
             sqlCommand.Parameters.AddWithValue("ID", id);
-            await connection.OpenAsync();
-            int number = await sqlCommand.ExecuteNonQueryAsync();
-            if (number == 0) isChanged = false;
-            if (number == 1) isChanged = true;
-            connection.Close();
+            try
+            {
+                await connection.OpenAsync();
+                int number = await sqlCommand.ExecuteNonQueryAsync();
+                if (number == 0) isChanged = false;
+                if (number == 1) isChanged = true;
+            }
+            finally
+            {
+                connection.Close();
+            }
             return isChanged;
         }
 
@@ -51,11 +58,17 @@ namespace TaskManagerProject.Repository
             string sqlException = $"UPDATE StudentNew SET isStarosta = {0} WHERE ID = @ID ";
             SqlCommand sqlCommand = new SqlCommand(sqlException, connection);
             sqlCommand.Parameters.AddWithValue("ID", id);
-            await connection.OpenAsync();
-            int number = await sqlCommand.ExecuteNonQueryAsync();
-            if (number == 0) isChanged = false;
-            if (number == 1) isChanged = true;
-            connection.Close();
+            try
+            {
+                await connection.OpenAsync();
+                int number = await sqlCommand.ExecuteNonQueryAsync();
+                if (number == 0) isChanged = false;
+                if (number == 1) isChanged = true;
+            }
+            finally
+            {
+                connection.Close();
+            }
             return isChanged;
         }
 
@@ -76,7 +89,6 @@ namespace TaskManagerProject.Repository
                 sqlCommand.Parameters.AddWithValue("@StudentGroup", StudentGroup);
                 sqlCommand.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
                 sqlCommand.Parameters.AddWithValue("@Grade", Grade);
-
 
                 await connection.OpenAsync();
 
@@ -104,27 +116,34 @@ namespace TaskManagerProject.Repository
             sqlCommand.Parameters.AddWithValue("LastName", lastName);
             sqlCommand.Parameters.AddWithValue("ThirdName", thirdName);
 
-            await connection.OpenAsync();
 
-            using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
+            try
             {
-                if (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                await connection.OpenAsync();
+
+                using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
                 {
-                    student = new Student(Convert.ToInt32(reader.GetValue(0)), reader.GetValue(1).ToString(), reader.GetValue(2).ToString(),
-                        reader.GetValue(3).ToString(), reader.GetValue(8).ToString(), reader.GetValue(4).ToString(),
-                        reader.GetValue(6).ToString(), reader.GetValue(7).ToString(),
-                        Convert.ToInt32(reader.GetValue(9)));
-                    if (Convert.ToInt32(reader.GetValue(5)) == 1)
+                    if (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
                     {
-                        student.isStarosta = true;
-                    }
-                    else
-                    {
-                        student.isStarosta = false;
+                        student = new Student(Convert.ToInt32(reader.GetValue(0)), reader.GetValue(1).ToString(), reader.GetValue(2).ToString(),
+                            reader.GetValue(3).ToString(), reader.GetValue(8).ToString(), reader.GetValue(4).ToString(),
+                            reader.GetValue(6).ToString(), reader.GetValue(7).ToString(),
+                            Convert.ToInt32(reader.GetValue(9)));
+                        if (Convert.ToInt32(reader.GetValue(5)) == 1)
+                        {
+                            student.isStarosta = true;
+                        }
+                        else
+                        {
+                            student.isStarosta = false;
+                        }
                     }
                 }
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
             return student;
         }
 
@@ -149,21 +168,29 @@ namespace TaskManagerProject.Repository
                         isStarosta = Convert.ToInt32(reader.GetValue(5));
                     }
                 }
-               
+
             }
             connection.Close();
             return isStarosta;
         }
 
-        public async Task CompleteTask(string taskName)
+        public async Task CompleteTask(int taskId, int studentId)
         {
-            string sqlExpression = "UPDATE Tasks SET isCompleted = 1 Where TaskName = @TaskName";
+            string sqlExpression = "UPDATE StudentTask SET isCompleted = 1 Where TaskId = @TaskId and StudentId = @StudentId";
             SqlCommand sqlCommand = new SqlCommand(sqlExpression, connection);
-            sqlCommand.Parameters.AddWithValue("TaskName", taskName);
-            await connection.OpenAsync();
-            await sqlCommand.ExecuteNonQueryAsync();
+            sqlCommand.Parameters.AddWithValue("TaskId", taskId);
+            sqlCommand.Parameters.AddWithValue("StudentId", studentId);
 
-            connection.Close();
+            try
+            {
+                await connection.OpenAsync();
+                await sqlCommand.ExecuteNonQueryAsync();
+            }
+            finally
+            {
+                connection.Close();
+            }
+
         }
 
         public async Task CreateNewTask(string taskName, string taskDescription, DateTime deadLine, int subjectId)
@@ -174,8 +201,7 @@ namespace TaskManagerProject.Repository
 
             int workId = Values.currWorkId;
 
-            string sqlExpression = "INSERT INTO Tasks(TaskName,TaskDescription,SubjectId,WorkId,isCompleted,isExpired,deadLine) Values (@TaskName,@TaskDescription,@SubjectId,@WorkId,@isCompleted,@isExpired,@deadLine)";
-            SqlCommand sqlCommand = new SqlCommand(sqlExpression, connection);
+            string sqlExpression = "INSERT INTO Tasks(TaskName,TaskDescription,SubjectId,WorkId,isCompleted,isExpired,deadLine) Values (@TaskName,@TaskDescription,@SubjectId,@WorkId,@isCompleted,@isExpired,@deadLine)"; SqlCommand sqlCommand = new SqlCommand(sqlExpression, connection);
             sqlCommand.Parameters.AddWithValue("TaskName", taskName);
             sqlCommand.Parameters.AddWithValue("TaskDescription", taskDescription);
             sqlCommand.Parameters.AddWithValue("deadLine", deadLine);
@@ -187,17 +213,179 @@ namespace TaskManagerProject.Repository
             await sqlCommand.ExecuteNonQueryAsync();
 
             connection.Close();
+
+            List<Student> students = await GetAllStudentsIdsByGrade(Values.currGrade);
+
+            int taskId = await GetTaskIdByName(taskName);
+
+            string sqlExpression2 = "INSERT INTO StudentTask(TaskId, isCompleted, StudentId, Grade, WorkId, SubjectId) Values (@TaskId,@isCompleted,@StudentId,@Grade,@WorkId,@SubjectId)";
+            SqlCommand sqlCommand2 = new SqlCommand(sqlExpression2, connection);
+            sqlCommand2.Parameters.AddWithValue("TaskId", taskId);
+            sqlCommand2.Parameters.AddWithValue("isCompleted", isCompleted);
+            sqlCommand2.Parameters.AddWithValue("Grade", Values.currGrade);
+            sqlCommand2.Parameters.AddWithValue("WorkId", Values.currWorkId);
+            sqlCommand2.Parameters.AddWithValue("SubjectId", subjectId);
+            sqlCommand2.Parameters.Add("StudentId", SqlDbType.Int);
+            await connection.OpenAsync();
+            for (int i = 0; i < students.Count; i++)
+            {
+                sqlCommand2.Parameters["StudentId"].Value = students[i].Id;
+                await sqlCommand2.ExecuteNonQueryAsync();
+            }
+            connection.Close();
         }
 
-        public async Task UnCompleteTask(string taskName)
+        public async ValueTask<int> GetTaskId(string taskName)
         {
-            string sqlExpression = "UPDATE Tasks SET isCompleted = 0 Where TaskName = @TaskName";
-            SqlCommand sqlCommand = new SqlCommand(sqlExpression, connection);
+            string SqlExpression = "SELECT * FROM Tasks Where TaskName = @TaskName";
+            SqlCommand sqlCommand = new SqlCommand(SqlExpression, connection);
             sqlCommand.Parameters.AddWithValue("TaskName", taskName);
-            await connection.OpenAsync();
-            await sqlCommand.ExecuteNonQueryAsync();
+            int taskId = 1;
 
-            connection.Close();
+            try
+            {
+                await connection.OpenAsync();
+                using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
+                {
+                    // получены данные <-
+                    if (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                    {
+                        taskId = Convert.ToInt32(reader.GetValue(0));
+                    }
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return taskId;
+        }
+
+        public async ValueTask<List<bool>> GetCompletedByStudent()
+        {
+            string SqlExpression = "SELECT * FROM StudentTask Where StudentId = @StudentId and WorkId = @WorkId and SubjectId = @SubjectId";
+            SqlCommand sqlCommand = new SqlCommand(SqlExpression, connection);
+            sqlCommand.Parameters.AddWithValue("StudentId", Values.currStudentId);
+            sqlCommand.Parameters.AddWithValue("WorkId", Values.currWorkId);
+            int id = await GetSubjectId(Values.currSubjectName);
+            sqlCommand.Parameters.AddWithValue("SubjectId", id);
+
+            List<bool> isCompleted = new List<bool>();
+
+            try
+            {
+                await connection.OpenAsync();
+                using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
+                {
+                    // получены данные <-
+                    while (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                    {
+                        if (Convert.ToInt32(reader.GetValue(2)) == 0) isCompleted.Add(false);
+                        else isCompleted.Add(true);
+                    }
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isCompleted;
+        }
+
+
+        public async ValueTask<int> GetTaskIdByName(string taskName)
+        {
+            string SqlExpression = "SELECT * FROM Tasks Where TaskName = @TaskName";
+            SqlCommand sqlCommand = new SqlCommand(SqlExpression, connection);
+            sqlCommand.Parameters.AddWithValue("TaskName", taskName);
+
+            TaskStudent task = new TaskStudent();
+
+            try
+            {
+
+                await connection.OpenAsync();
+                using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
+                {
+                    // получены данные <-
+                    while (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                    {
+                        task = new TaskStudent() { Id = Convert.ToInt32(reader.GetValue(0)), TaskName = Convert.ToString(reader.GetValue(1)), TaskDescription = reader.GetValue(2).ToString() };
+                    }
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return task.Id;
+        }
+
+        public async ValueTask<List<Student>> GetAllStudentsIdsByGrade(int grade)
+        {
+            string SqlExpression = "SELECT * FROM StudentNew Where Grade = @Grade";
+            SqlCommand sqlCommand = new SqlCommand(SqlExpression, connection);
+            sqlCommand.Parameters.AddWithValue("Grade", grade);
+
+            List<Student> students = new List<Student>();
+
+            try
+            {
+                await connection.OpenAsync();
+                using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
+                {
+                    // получены данные <-
+                    while (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                    {
+                        Student student;
+                        student = new Student(Convert.ToInt32(reader.GetValue(0)), Convert.ToString(reader.GetValue(1)), Convert.ToString(reader.GetValue(2)),
+                            Convert.ToString(reader.GetValue(3)),
+                            Convert.ToString(reader.GetValue(8)),
+                            Convert.ToString(reader.GetValue(4)),
+                            Convert.ToString(reader.GetValue(6)),
+                            Convert.ToString(reader.GetValue(7)),
+                            Convert.ToInt32(reader.GetValue(9)));
+                        if (Convert.ToInt32(reader.GetValue(5)) == 0)
+                        {
+                            student.isStarosta = false;
+                        }
+                        else
+                        {
+                            student.isStarosta = true;
+                        }
+                        students.Add(student);
+
+                    }
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return students;
+        }
+
+        public async Task UnCompleteTask(int taskId, int studentId)
+        {
+            string sqlExpression = "UPDATE StudentTask SET isCompleted = 0 Where TaskId = @TaskId and StudentId = @StudentId";
+            SqlCommand sqlCommand = new SqlCommand(sqlExpression, connection);
+            sqlCommand.Parameters.AddWithValue("TaskId", taskId);
+            sqlCommand.Parameters.AddWithValue("StudentId", studentId);
+
+            try
+            {
+                await connection.OpenAsync();
+                await sqlCommand.ExecuteNonQueryAsync();
+            }
+
+
+            finally
+            {
+                connection.Close();
+            }
+
         }
 
         public async ValueTask<int> GetSubjectId(string subjectName)
@@ -207,16 +395,24 @@ namespace TaskManagerProject.Repository
             sqlCommand.Parameters.AddWithValue("SubjectName", subjectName);
 
             TaskStudent task = new TaskStudent();
-            await connection.OpenAsync();
-            using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
+
+            try
             {
-                // получены данные <-
-                while (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                await connection.OpenAsync();
+                using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
                 {
-                    task = new TaskStudent() { Id = Convert.ToInt32(reader.GetValue(0)), TaskName = Convert.ToString(reader.GetValue(1)), TaskDescription = reader.GetValue(2).ToString()};
+                    // получены данные <-
+                    while (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                    {
+                        task = new TaskStudent() { Id = Convert.ToInt32(reader.GetValue(0)), TaskName = Convert.ToString(reader.GetValue(1)), TaskDescription = reader.GetValue(2).ToString() };
+                    }
                 }
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
+
             return task.Id;
         }
 
@@ -227,16 +423,23 @@ namespace TaskManagerProject.Repository
             sqlCommand.Parameters.AddWithValue("WorkName", workName);
 
             Work work = new Work();
-            await connection.OpenAsync();
-            using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
+            try
             {
-                // получены данные <-
-                while (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                await connection.OpenAsync();
+                using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
                 {
-                    work = new Work() { ID = Convert.ToInt32(reader.GetValue(0)), WorkName = Convert.ToString(reader.GetValue(1)), NumberWorks = Convert.ToInt32(reader.GetValue(2))};
+                    // получены данные <-
+                    while (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                    {
+                        work = new Work() { ID = Convert.ToInt32(reader.GetValue(0)), WorkName = Convert.ToString(reader.GetValue(1)), NumberWorks = Convert.ToInt32(reader.GetValue(2)) };
+                    }
                 }
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
+
             return work.ID;
         }
 
@@ -249,17 +452,21 @@ namespace TaskManagerProject.Repository
             sqlCommand.Parameters.AddWithValue("WorkId", workId);
 
             List<TaskStudent> collectedTasks = new List<TaskStudent>();
-            await connection.OpenAsync();
-            using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
+
+            try
             {
-                // получены данные <-
-                while (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                await connection.OpenAsync();
+                using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
                 {
-                    TaskStudent task = new TaskStudent() { Id = Convert.ToInt32(reader.GetValue(0)), TaskName = Convert.ToString(reader.GetValue(1)), TaskDescription = Convert.ToString(reader.GetValue(2)), isCompleted = Convert.ToInt32(reader.GetValue(5)), isExpired = Convert.ToInt32(reader.GetValue(7)), dateLine = reader.GetValue(8).ToString() };
-                    collectedTasks.Add(task);
+                    // получены данные <-
+                    while (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                    {
+                        TaskStudent task = new TaskStudent() { Id = Convert.ToInt32(reader.GetValue(0)), TaskName = Convert.ToString(reader.GetValue(1)), TaskDescription = Convert.ToString(reader.GetValue(2)), isCompleted = Convert.ToInt32(reader.GetValue(5)), isExpired = Convert.ToInt32(reader.GetValue(7)), dateLine = reader.GetValue(8).ToString() };
+                        collectedTasks.Add(task);
+                    }
                 }
             }
-            connection.Close();
+            finally { connection.Close(); }
             return collectedTasks;
         }
 
@@ -268,17 +475,20 @@ namespace TaskManagerProject.Repository
             string SqlExpression = "SELECT * FROM Groups";
             SqlCommand sqlCommand = new SqlCommand(SqlExpression, connection);
             List<Group> collectedGroups = new List<Group>();
-            await connection.OpenAsync();
-            using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
+            try
             {
-                // получены данные <-
-                while (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                await connection.OpenAsync();
+                using (var reader = await sqlCommand.ExecuteReaderAsync()) // запрос выполняется 
                 {
-                    Group group = new Group() { Id = Convert.ToInt32(reader.GetValue(0)), GroupName = Convert.ToString(reader.GetValue(1)) };
-                    collectedGroups.Add(group);
+                    // получены данные <-
+                    while (await reader.ReadAsync()) // считывает каждый столбец и записывает в список
+                    {
+                        Group group = new Group() { Id = Convert.ToInt32(reader.GetValue(0)), GroupName = Convert.ToString(reader.GetValue(1)) };
+                        collectedGroups.Add(group);
+                    }
                 }
             }
-            connection.Close();
+            finally { connection.Close(); }
             return collectedGroups;
         }
 
@@ -290,16 +500,22 @@ namespace TaskManagerProject.Repository
 
             Subject subject = new Subject();
 
-            await connection.OpenAsync();
-
-            using (var reader = await sqlCommand.ExecuteReaderAsync())
+            try
             {
-                if (await reader.ReadAsync())
+                await connection.OpenAsync();
+
+                using (var reader = await sqlCommand.ExecuteReaderAsync())
                 {
-                    subject = new Subject { ID = Convert.ToInt32(reader.GetValue(0)), SubjectName = reader.GetValue(1).ToString(), Grade = Convert.ToInt32(reader.GetValue(2)) };
+                    if (await reader.ReadAsync())
+                    {
+                        subject = new Subject { ID = Convert.ToInt32(reader.GetValue(0)), SubjectName = reader.GetValue(1).ToString(), Grade = Convert.ToInt32(reader.GetValue(2)) };
+                    }
                 }
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
             return subject;
         }
 
@@ -311,16 +527,22 @@ namespace TaskManagerProject.Repository
 
             List<Subject> subjects = new List<Subject>();
 
-            await connection.OpenAsync();
-
-            using (var reader = await sqlCommand.ExecuteReaderAsync())
+            try
             {
-                while (await reader.ReadAsync())
+                await connection.OpenAsync();
+
+                using (var reader = await sqlCommand.ExecuteReaderAsync())
                 {
-                    subjects.Add(new Subject { ID = Convert.ToInt32(reader.GetValue(0)), SubjectName = reader.GetValue(1).ToString(), Grade = Convert.ToInt32(reader.GetValue(2)) });
+                    while (await reader.ReadAsync())
+                    {
+                        subjects.Add(new Subject { ID = Convert.ToInt32(reader.GetValue(0)), SubjectName = reader.GetValue(1).ToString(), Grade = Convert.ToInt32(reader.GetValue(2)) });
+                    }
                 }
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
             return subjects;
         }
 
@@ -331,16 +553,22 @@ namespace TaskManagerProject.Repository
 
             List<Work> works = new List<Work>();
 
-            await connection.OpenAsync();
-
-            using (var reader = await sqlCommand.ExecuteReaderAsync())
+            try
             {
-                while (await reader.ReadAsync())
+                await connection.OpenAsync();
+
+                using (var reader = await sqlCommand.ExecuteReaderAsync())
                 {
-                    works.Add(new Work { ID = Convert.ToInt32(reader.GetValue(0)), WorkName = reader.GetValue(1).ToString(), NumberWorks = Convert.ToInt32(reader.GetValue(2)) });
+                    while (await reader.ReadAsync())
+                    {
+                        works.Add(new Work { ID = Convert.ToInt32(reader.GetValue(0)), WorkName = reader.GetValue(1).ToString(), NumberWorks = Convert.ToInt32(reader.GetValue(2)) });
+                    }
                 }
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
             return works;
         }
 
@@ -364,34 +592,41 @@ namespace TaskManagerProject.Repository
             command2.Parameters.AddWithValue("Password", password);
 
             bool isExist = false;
-            await connection.OpenAsync();
 
-
-            using (var reader = await command1.ExecuteReaderAsync()) // запускам поиск
+            try
             {
-                if (await reader.ReadAsync()) // считываем данные
+                await connection.OpenAsync();
+
+
+                using (var reader = await command1.ExecuteReaderAsync()) // запускам поиск
                 {
-                    isExist = true;
-                    return isExist;
-                }
-                else
-                {
-                    reader.Close();
-                    using (var reader2 = await command2.ExecuteReaderAsync()) // находит объект
+                    if (await reader.ReadAsync()) // считываем данные
                     {
-                        if (await reader2.ReadAsync()) // проверяет есть ли данные в этом объекте
+                        isExist = true;
+                        return isExist;
+                    }
+                    else
+                    {
+                        reader.Close();
+                        using (var reader2 = await command2.ExecuteReaderAsync()) // находит объект
                         {
-                            isExist = true;
-                            return isExist;
-                        }
-                        else
-                        {
-                            isExist = false;
+                            if (await reader2.ReadAsync()) // проверяет есть ли данные в этом объекте
+                            {
+                                isExist = true;
+                                return isExist;
+                            }
+                            else
+                            {
+                                isExist = false;
+                            }
                         }
                     }
                 }
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
             return isExist;
         }
 

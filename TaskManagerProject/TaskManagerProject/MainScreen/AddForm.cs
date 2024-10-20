@@ -61,7 +61,6 @@ namespace TaskManagerProject.MainScreen
                 Values.currWorkId = await sQLManager.GetWorkId(comboBox1.Text);
                 AddTask();
                 MessageBox.Show("Задание успешно добавлено!");
-
             }
             else
             {
