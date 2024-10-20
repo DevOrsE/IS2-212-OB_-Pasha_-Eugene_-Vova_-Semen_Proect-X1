@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|c:\\users\\user\\documents\\github\\is2-212-ob_-pasha_-eugene_-vova_-semen_proect-x1\\taskmanagerproject\\taskmanagerproject\\login_registration\\registrationandlogin\\secretform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\registrationandlogin\\secretform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|c:\\users\\user\\documents\\github\\is2-212-ob_-pasha_-eugene_-vova_-semen_proect-x1\\taskmanagerproject\\taskmanagerproject\\repository\\sqlmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\repository\\sqlmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\registrationandlogin\\secretform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,16 +15,24 @@
       "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mainscreen\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\registrationandlogin\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\registrationandlogin\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\greetings\\loginregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\greetings\\loginregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mainscreen\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mainscreen\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\registrationandlogin\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\registrationandlogin\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\registrationandlogin\\secretform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\registrationandlogin\\secretform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mutablevalues\\values.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mutablevalues\\values.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mainscreen\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mainscreen\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mainscreen\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,36 +43,16 @@
       "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\metadata\\jsonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mainscreen\\taskswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mainscreen\\taskswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\repository\\sqlmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\repository\\sqlmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mainscreen\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mainscreen\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mutablevalues\\values.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mutablevalues\\values.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\models\\work.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\models\\work.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mainscreen\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mainscreen\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\registrationandlogin\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\registrationandlogin\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mainscreen\\workmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mainscreen\\workmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\greetings\\loginregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -75,8 +63,24 @@
       "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mainscreen\\taskswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\registrationandlogin\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\registrationandlogin\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\greetings\\loginregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\greetings\\loginregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mainscreen\\taskswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mainscreen\\taskswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\registrationandlogin\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\registrationandlogin\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mainscreen\\workmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\mainscreen\\workmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\mainscreen\\workmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -89,10 +93,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\login_registration\\registrationandlogin\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\login_registration\\registrationandlogin\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|solutionrelative:taskmanagerproject\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A90C158-DAB7-40F8-9D05-EF4A708889A7}|TaskManagerProject\\TaskManagerProject.csproj|C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\taskmanagerproject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -114,17 +114,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 18,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "Values.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MutableValues\\Values.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\MutableValues\\Values.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MutableValues\\Values.cs",
               "RelativeToolTip": "TaskManagerProject\\MutableValues\\Values.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAmwA4AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T10:51:44.687Z",
               "IsPinned": true
@@ -137,7 +137,7 @@
               "RelativeDocumentMoniker": "TaskManagerProject\\MainScreen\\MainForm.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MainScreen\\MainForm.cs",
               "RelativeToolTip": "TaskManagerProject\\MainScreen\\MainForm.cs",
-              "ViewState": "AQIAAJ0AAAAAAAAAAAAIwLAAAAAXAAAA",
+              "ViewState": "AQIAAHIBAAAAAAAAAAASwJQBAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T10:37:34.282Z",
               "IsPinned": true
@@ -159,10 +159,6 @@
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "SecretForm.cs",
@@ -172,36 +168,34 @@
               "RelativeToolTip": "TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\SecretForm.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAApwB0AAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T18:16:10.165Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-16T18:16:10.165Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "SecretForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\SecretForm.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\SecretForm.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\SecretForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\SecretForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T18:14:39.17Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2024-10-16T18:14:39.17Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "AddForm.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MainScreen\\AddForm.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\MainScreen\\AddForm.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MainScreen\\AddForm.cs",
               "RelativeToolTip": "TaskManagerProject\\MainScreen\\AddForm.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAA/wD8AAAAAAAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAswD4AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T16:40:25.782Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "AddForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MainScreen\\AddForm.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\MainScreen\\AddForm.cs",
@@ -212,19 +206,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Login_Registration\\Program.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Login_Registration\\Program.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Login_Registration\\Program.cs",
               "RelativeToolTip": "TaskManagerProject\\Login_Registration\\Program.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAowBMAAAAMAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAIwBMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T11:29:23.477Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 14,
               "Title": "TasksWindow.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MainScreen\\TasksWindow.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\MainScreen\\TasksWindow.cs",
@@ -236,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 13,
               "Title": "LoginRegistration.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Login_Registration\\Greetings\\LoginRegistration.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Login_Registration\\Greetings\\LoginRegistration.cs",
@@ -247,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "WorkMenu.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MainScreen\\WorkMenu.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\MainScreen\\WorkMenu.cs",
@@ -258,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Registration.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\Registration.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\Registration.cs",
@@ -270,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 16,
               "Title": "LoginRegistration.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Login_Registration\\Greetings\\LoginRegistration.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Login_Registration\\Greetings\\LoginRegistration.cs",
@@ -282,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 15,
               "Title": "Login.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\Login.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\Login.cs",
@@ -294,31 +288,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 12,
               "Title": "Student.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Models\\Student.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Models\\Student.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Models\\Student.cs",
               "RelativeToolTip": "TaskManagerProject\\Models\\Student.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAjAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T21:49:48.123Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "SQLManager.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Repository\\SQLManager.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Repository\\SQLManager.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Repository\\SQLManager.cs",
               "RelativeToolTip": "TaskManagerProject\\Repository\\SQLManager.cs",
-              "ViewState": "AQIAAIMAAAAAAAAAAAAMwI4AAAAQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T11:31:46.26Z"
+              "WhenOpened": "2024-10-07T11:31:46.26Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Login.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\Login.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\Login.cs",
@@ -341,19 +336,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "JsonManager.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MetaData\\JsonManager.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\MetaData\\JsonManager.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MetaData\\JsonManager.cs",
               "RelativeToolTip": "TaskManagerProject\\MetaData\\JsonManager.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAIwCwAAAAPAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T20:18:57.89Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 17,
               "Title": "TasksWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MainScreen\\TasksWindow.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\MainScreen\\TasksWindow.cs",
@@ -364,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "Work.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Models\\Work.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Models\\Work.cs",
@@ -376,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "TaskStudent.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Models\\TaskStudent.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Models\\TaskStudent.cs",
@@ -388,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 3,
               "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MainScreen\\MainForm.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\MainScreen\\MainForm.cs",
@@ -399,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "Registration.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\Registration.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\Login_Registration\\RegistrationAndLogin\\Registration.cs",
@@ -434,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "WorkMenu.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IS2-212-OB_-Pasha_-Eugene_-Vova_-Semen_Proect-X1\\TaskManagerProject\\TaskManagerProject\\MainScreen\\WorkMenu.cs",
               "RelativeDocumentMoniker": "TaskManagerProject\\MainScreen\\WorkMenu.cs",

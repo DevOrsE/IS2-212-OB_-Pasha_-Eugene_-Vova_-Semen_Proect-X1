@@ -10,9 +10,10 @@ namespace TaskManagerProject.MutableValues
     {
         public static int currWorkId;
 
+        public static int currStudentId;
+
         public static string currSubjectName;
 
         public static int currGrade;
-
     }
 }

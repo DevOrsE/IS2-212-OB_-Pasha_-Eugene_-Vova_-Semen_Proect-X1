@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Text;
@@ -184,10 +185,11 @@ namespace TaskManagerProject.MainScreen
             List<Label> labelsTasksName = new List<Label>();
             List<Label> labelsTasksDescription = new List<Label>();
             List<CheckBox> TasksCheckBoxes = new List<CheckBox>();
-            List<Label> TasksDeadLines= new List<Label>();
+            List<Label> TasksDeadLines = new List<Label>();
             string subjectName = label.Text;
             int subjectId = await sQLManager.GetSubjectId(subjectName);
             List<TaskStudent> tasks = await sQLManager.GetTasksFromSubject(subjectId, Values.currWorkId);
+            List<bool> checkBoxesValues = await sQLManager.GetCompletedByStudent();
 
             List<Label> navLabels = new List<Label>() { 
                 new Label
@@ -251,17 +253,15 @@ namespace TaskManagerProject.MainScreen
             {
                 bool isCompleted = false;
 
-                if (tasks[i].isCompleted == 0) isCompleted = false;
-                else isCompleted = true;
                 CheckBox checkBoxParse = new CheckBox()
                 {
                     Name = tasks[i].TaskName,
                     AutoSize = true,
-                    Checked = isCompleted,
+                    Checked = checkBoxesValues[i],
                     Location = new Point(1123, 46 + (i * 27))
                 };
                 checkBoxParse.Font = new Font(new FontFamily("Microsoft Sans Serif"), 14);
-                checkBoxParse.MouseUp += new MouseEventHandler(CheckBox);
+                checkBoxParse.MouseUp += new MouseEventHandler(CheckBoxs);
                 TasksCheckBoxes.Add(checkBoxParse);
             }
 
@@ -288,11 +288,24 @@ namespace TaskManagerProject.MainScreen
             tasksWindow.Show();
         }
 
-        private async void CheckBox(object sender, EventArgs args)
+        public void DrawRectangleInt(PaintEventArgs e)
+        {
+
+            Pen blackPen = new Pen(Color.Black, 3);
+
+            int x = 10;
+            int y = 300;
+            int width = 200;
+            int height = 200;
+            e.Graphics.DrawRectangle(blackPen, x, y, width, height);
+        }
+
+        private async void CheckBoxs(object sender, EventArgs args)
         {
             CheckBox checkBox = (CheckBox)sender;
-            if (checkBox.Checked == true) await sQLManager.CompleteTask(checkBox.Name);
-            if (checkBox.Checked == false) await sQLManager.UnCompleteTask(checkBox.Name);
+            int taskId = await sQLManager.GetTaskId(checkBox.Name);
+            if (checkBox.Checked == true) await sQLManager.CompleteTask(taskId, Values.currStudentId);
+            if (checkBox.Checked == false) await sQLManager.UnCompleteTask(taskId, Values.currStudentId);
         }
 
         private async void openNewWindow(object sender, EventArgs args)
@@ -365,12 +378,32 @@ namespace TaskManagerProject.MainScreen
             
         }
 
-        private async void MainForm_Load(object sender, EventArgs e)
+        async Task checkIdChanged()
+        {
+            Student student = await JsonManager.GetJson();
+            Values.currStudentId = student.Id;
+
+            Student studentChecker = await sQLManager.GetStudent(student.firstName,student.lastName,student.thirdName);
+            if(student.Id != studentChecker.id) 
+            {
+                await JsonManager.PutJson(studentChecker);
+                Values.currStudentId = studentChecker.id;
+            }
+
+        }
+
+        async Task checkIfSatrosta()
         {
             if (await CheckIfStarosta() == 1)
             {
                 button2.Visible = true;
             }
+        }
+
+        private async void MainForm_Load(object sender, EventArgs e)
+        {
+            await checkIdChanged();
+            await checkIfSatrosta();
             base.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
